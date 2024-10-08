@@ -1,0 +1,61 @@
+<header>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
+  <div class="container">
+    <a class="navbar-brand" href="#!"><span style="color: #391b03;">CO</span><span style="color: #a25406;">FFEE</span></a>
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#!"><strong>Home</strong></a>
+        </li>
+        <li class="nav-item">
+          <a  [routerLink]="['list/',str]" class="nav-link" ><STRong>products</STRong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!"><Strong>About</Strong></a>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav d-flex flex-row">
+        <li class="nav-item text-center mx-4 mx-lg-1">
+          <a  [routerLink]="['inoice/',invoice]">
+            <div>
+              <i class="bi bi-cart2  fa-lg mb-1 text-dark"></i>
+              <span class="badge rounded-pill badge-notification bg-danger">{{count$ | async}}</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+     
+    </div>
+    <form class="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
+      <input type="search" class="form-control" placeholder="Search" aria-label="Search" />
+      <button class="btn btn-secondary" type="button" data-mdb-ripple-color="dark">
+         search
+      </button>
+    </form>
+  </div>
+</nav>
+<!-- Navbar -->
+  <!--Section: Design Block-->
+  <section>
+    <!-- Intro -->
+   
+    <div id="intro" class="bg-image vh-100" style="
+          background-image: url('https://img.freepik.com/free-photo/side-view-fresh-coffee-beans-isolated-white-wooden-background_141793-27587.jpg?t=st=1728234834~exp=1728238434~hmac=a1830f4d4b5146237e7ebe0ff350b9ee2474e8d5287cba9d74230caa003e1419&w=996');
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          background-attachment: fixed;
+        ">
+       
+      <div class="mask" style="background-color: rgba(250, 182, 162, 0.481);"></div>
+    </div>
+    <!-- Intro -->
+  </section>
+  <!--Section: Design Block-->
+</header>

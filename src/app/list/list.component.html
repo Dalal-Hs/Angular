@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row mt-5">
+     
+      <div class="col-md-3">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Filter Options</h5>
+                  
+                  <div class="mb-3">
+                      <label for="priceRange" class="form-label">Price Range</label>
+                      <input type="range" class="form-range" id="priceRange" min="0" max="20" step="1" 
+                             (input)="updatePriceValue($event)">
+                      <span id="priceValue">{{ priceRange }}</span>
+                  </div>
+      
+                  <h6>Choose Regions:</h6>
+                  <div *ngFor="let region of ['Central America', 'Africa', 'South America', 'Asia Pacific', 'Middle East']">
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" 
+                                 [value]="region" 
+                                 (change)="toggleRegion(region)" 
+                                 [checked]="selectedRegions.includes(region)">
+                          <label class="form-check-label">{{region}}</label>
+                      </div>
+                  </div>
+      
+                  <button class="btn btn-outline-warning  text-dark mt-3" (click)="applyFilters()">Find a product</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-9">
+          <div class="row d-flex">
+              <div class="col-md-4" *ngFor="let item of filteredCoffee">
+                  <div class="card h-100 shadow-sm">
+                      <img [src]="item.image_url" height="250px" width="250px" class="card-img-top">
+                      <div class="card-body d-flex flex-column">
+                          <h5 class="card-title text-center">{{item.name}}</h5>
+                          <span class="text-dark mb-2 text-center" style="color: rgb(89, 29, 5);">{{item.region}}</span>
+                          <span class="text-dark mb-2 text-end" style="color: rgb(89, 29, 5);"><strong>{{item.price}} SR</strong></span>
+                          <div class="btn-group w-100" role="group">
+                              <a [routerLink]="['/details', item.id]" type="button" class="btn btn-outline-warning" style="color: rgb(92, 51, 7);">Details</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
